@@ -8,12 +8,12 @@ public class Distribuidora {
 	private double precioKWh;
 	private Set<Usuario> usuarios;
 	
-	public void precioKWh (double unPrecio) {
-		this.precioKWh = unPrecio;
-	}
+	
 	
 	public void agregarUsuario (Usuario unUsuario) {
-		this.usuarios.add(unUsuario);
+		if (!this.usuarios.contains(unUsuario)) {
+			this.usuarios.add(unUsuario);
+		}
 	}
 	
 	public List<Factura> facturar (){
@@ -26,8 +26,10 @@ public class Distribuidora {
 		return 0;
 	}
 	
-	
-	
+	//Iniciso 1
+	public void setprecioKWH (double unPrecio) {
+		this.precioKWh = unPrecio;
+	}
 	
 
 }
