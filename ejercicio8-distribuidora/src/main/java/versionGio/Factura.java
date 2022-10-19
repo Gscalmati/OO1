@@ -9,8 +9,16 @@ public class Factura {
 	private LocalDate fecha;
 	private Usuario usuario;
 	
+	//CONSTRUCTOR
+	public Factura (double unMonto, double unDescuento, Usuario unUsuario) {
+		this.montoEnergiaActiva = unMonto;
+		this.descuento = unDescuento;
+		this.fecha = LocalDate.now();
+		this.usuario = unUsuario;
+	}
+	
 	private double montoTotal () {
-		return 0.0;
+		return (this.montoEnergiaActiva - (this.montoEnergiaActiva * this.descuento));
 	}
 	
 	private Usuario usuario () {
@@ -21,6 +29,7 @@ public class Factura {
 		return this.fecha;
 	}
 	
+	//El descuento del pfe entra como 0.1
 	private double descuento () {
 		return this.descuento;
 	}
