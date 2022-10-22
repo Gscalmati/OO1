@@ -44,10 +44,10 @@ public class Usuario {
 		}
 		
 		double descuento = 0;
-		double costoConsumo = this.ultimoConsumoActiva() * precioKWh;
+		double costoConsumo = ultimoConsumo.costoEnBaseA(precioKWh);
 		double factor = ultimoConsumo.factorDePotencia();
 		if (factor >= 0.8) {
-			descuento = 0.1;
+			descuento = 10;
 		}
 		
 		Factura nuevaFactura = new Factura(costoConsumo, descuento, this);
