@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ar.edu.unlp.info.oo1</groupId>
-  <artifactId>ejercicio9_cuentaConGanchos</artifactId>
+  <artifactId>ejercicio10-jobScheduler</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>ejercicio9_cuentaConGanchos</name>
+  <name>ejercicio10-jobScheduler</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

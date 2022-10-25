@@ -35,7 +35,7 @@ public abstract class Cuenta {
 	
 	protected boolean puedeExtraer (double monto) {
 		boolean resp = false;
-		if (this.getSaldo() > monto) {
+		if (this.getSaldo() >= monto) {
 			resp =  true;
 		}
 		return resp;

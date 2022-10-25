@@ -3,10 +3,10 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>ar.edu.unlp.info.oo1</groupId>
-  <artifactId>ejercicio2-balanzaElectronica</artifactId>
+  <artifactId>ejercicio9-cuentaConGanchos</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>ej-balanzaElectronica</name>
+  <name>ejercicio9-cuentaConGanchos</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

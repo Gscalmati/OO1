@@ -12,6 +12,10 @@ public class CajaDeAhorro extends Cuenta {
 	public double getCostoTransaccion() {
 		return costoTransaccion;
 	}
+	
+	public String getTasaTransaccion() {
+		return (this.getCostoTransaccion() + "%");
+	}
 
 	public void setCostoTransaccion(double costoTransaccion) {
 		this.costoTransaccion = costoTransaccion;
@@ -26,9 +30,13 @@ public class CajaDeAhorro extends Cuenta {
 	}
 	
 	public boolean transferirACuenta (double monto, Cuenta cuentaDestino) {
-		return super.transferirACuenta(this.sumarCostoTransaccion(monto), cuentaDestino);
+		if (this.puedeExtraer(this.sumarCostoTransaccion(monto))) {
+			this.extraerSinControlar(this.sumarCostoTransaccion(monto));
+			cuentaDestino.depositar(monto);
+			return true;
+		}
+		return false;
 	}
-	
 	public void depositar (double monto) {
 		super.depositar(this.restarCostoTransaccion(monto));
 	};
