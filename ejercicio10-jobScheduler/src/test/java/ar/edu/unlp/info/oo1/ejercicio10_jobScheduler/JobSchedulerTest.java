@@ -31,25 +31,29 @@ public class JobSchedulerTest {
     
     private JobScheduler newFifoScheduler() {
     	JobScheduler fifoScheduler = new JobScheduler();
-    	fifoScheduler.setStrategy("FIFO");
+    	Strategy fifo = new FIFO();
+    	fifoScheduler.setStrategy(fifo);
     	return fifoScheduler;
     }
     
     private JobScheduler newLifoScheduler() {
     	JobScheduler lifoScheduler = new JobScheduler();
-    	lifoScheduler.setStrategy("LIFO");
+    	Strategy lifo = new LIFO();
+    	lifoScheduler.setStrategy(lifo);
     	return lifoScheduler;
     }
     
     private JobScheduler newPriorityScheduler() {
     	JobScheduler priorityScheduler = new JobScheduler();
-    	priorityScheduler.setStrategy("HighestPriority");
+    	Strategy hp = new HighestPriority ();
+    	priorityScheduler.setStrategy(hp);
     	return priorityScheduler;
     }
     
     private JobScheduler newEffortScheduler() {
     	JobScheduler effortScheduler = new JobScheduler();
-    	effortScheduler.setStrategy("MostEffort");
+    	Strategy me = new MostEffort();
+    	effortScheduler.setStrategy(me);
     	return effortScheduler;
     }
     
@@ -98,6 +102,13 @@ public class JobSchedulerTest {
     	this.scheduleJobsIn(scheduler);
     	assertEquals(scheduler.next(), mostEffortJob);
     	assertEquals(scheduler.getJobs().size(), 3);
-
+    }
+    
+    @Test
+    void testStrategyStructure () {
+    	JobScheduler scheduler;
+    	
+    	scheduler = this.newFifoScheduler();
+    	assertEquals("FIFO", scheduler.getStrategy());
     }
 }
