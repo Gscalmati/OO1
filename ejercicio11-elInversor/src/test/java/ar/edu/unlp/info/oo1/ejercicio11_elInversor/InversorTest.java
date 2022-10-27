@@ -16,7 +16,7 @@ public class InversorTest {
 	@BeforeEach
 	public void setUp() {
 		steve = new Inversor ("Steve Jobs");
-		pf1 = new PlazoFijo (LocalDate.of(2022, 10, 15), 1000, 4);
+		pf1 = new PlazoFijo (LocalDate.of(2022, 10, 16), 1000, 4); //Plazo fijo con 10 dias
 		acc1 = new InversionEnAcciones ("GOOG", 365, 100);
 	}
 	

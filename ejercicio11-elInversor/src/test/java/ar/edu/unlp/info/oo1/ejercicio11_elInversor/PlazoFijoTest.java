@@ -15,15 +15,15 @@ public class PlazoFijoTest {
 	
 	@BeforeEach
 	public void setUp() {
-		pf1 = new PlazoFijo (LocalDate.of(2022, 9, 25), 1000, 4);
-		pf2 = new PlazoFijo (LocalDate.of(2022, 10, 20), 500, 1);
+		pf1 = new PlazoFijo (LocalDate.of(2022, 9, 26), 1000, 4); //Plazo fijo para que tenga 30 dias de antiguedad
+		pf2 = new PlazoFijo (LocalDate.of(2022, 10, 21), 500, 1); //Plazo fijo con 5 dias de antiguedad
 	}
 	
 	@Test
 	public void initializer () {
 		assertEquals(1000, this.pf1.getMontoDepositado());
 		assertEquals(4, this.pf1.getPorcentajeDeInteresDiario());
-		assertEquals(LocalDate.of(2022, 9, 25), this.pf1.getFechaDeConstitucion());
+		assertEquals(LocalDate.of(2022, 9, 26), this.pf1.getFechaDeConstitucion());
 	}
 	
 	@Test

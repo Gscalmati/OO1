@@ -28,6 +28,6 @@ public class InversionEnAccionesTest {
 	@Test
 	public void valorActual () {
 		assertEquals (25.50*100, this.acc1.valorActual());
-		assertEquals (30000*8961, this.acc2.valorActual());
+		assertEquals (30000*1, this.acc2.valorActual());
 	}
 }
