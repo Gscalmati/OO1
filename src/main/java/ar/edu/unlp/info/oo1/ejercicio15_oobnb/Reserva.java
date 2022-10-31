@@ -39,6 +39,10 @@ public class Reserva {
 		this.propiedad = propiedad;
 	}
 	
+	public LocalDate getIn() { 
+		return this.fecha.getFrom();
+	}
+	
 	/**
 	Retorna true si la reserva esta adentro del periodo ingresado, sea integra, o parcialmente
 	 **/
