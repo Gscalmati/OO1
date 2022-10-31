@@ -63,6 +63,7 @@ public class Propiedad {
 		if (!this.estaOcupada(fecha)) {
 			nuevaReserva = new Reserva (fecha, this);
 			u.agregarReserva(nuevaReserva);
+			this.agregarReserva(nuevaReserva);
 		}
 		return nuevaReserva;
 	}
@@ -70,6 +71,20 @@ public class Propiedad {
 	public boolean estaOcupada (DateLapse fecha) {
 		return this.fechasReservadas.stream()
 				.anyMatch(reserva -> reserva.fechaReservada(fecha));
+	}
+
+	public double calcularIngresos(DateLapse periodo) {
+		return this.fechasReservadas.stream()
+				.filter(r -> r.incluye(periodo))
+				.mapToDouble(value -> value.calcularPrecio())
+				.sum();
+	}
+
+	public void agregarReserva(Reserva r) {
+		this.fechasReservadas.add(r);
+	}
+	public void eliminarReserva(Reserva r) {
+		this.fechasReservadas.remove(r);
 	}
 	
 }
